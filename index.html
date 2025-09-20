@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="مقاول عام متخصص في إنشاء الشبكات، السواتر، المظلات للمنازل والطرق. خدمات متكاملة بجودة عالية وأسعار مناسبة.">
+    <meta name="keywords" content="مقاول عام, إنشاء شبكات, سواتر, مظلات طرق, مظلات جسور, مظلات منازل, مقاولات, بناء, تشييد, تعهدات عامة">
+    <title>مقاول عام - خدمات متكاملة في الإنشاءات والمقاولات</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #1a5276;
+            --secondary-color: #27ae60;
+            --accent-color: #f39c12;
+            --light-color: #f5f5f5;
+            --dark-color: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* التنسيق العام */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-left: 0.5rem;
+            color: var(--accent-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* الهيدر الرئيسي */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            background-color: #219653;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-color);
+        }
+        
+        .btn-accent:hover {
+            background-color: #e67e22;
+        }
+        
+        /* الأقسام العامة */
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        /* قسم الخدمات */
+        .services {
+            background-color: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-img {
+            height: 200px;
+            background-color: #ddd;
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .service-content ul {
+            margin: 1rem 0;
+            padding-right: 1.5rem;
+        }
+        
+        .service-content ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .service-content ul li::before {
+            content: '•';
+            color: var(--secondary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        /* معرض الصور */
+        .gallery {
+            background-color: #f9f9f9;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        /* المشاريع */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-img {
+            height: 200px;
+            background-color: #ddd;
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-location {
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .project-location i {
+            margin-left: 0.5rem;
+        }
+        
+        /* التقييمات */
+        .testimonials {
+            background-color: #f9f9f9;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--accent-color);
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            opacity: 0.3;
+        }
+        
+        .testimonial-text {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .testimonial-rating {
+            color: var(--accent-color);
+            margin-top: 0.5rem;
+        }
+        
+        /* من نحن */
+        .about-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-content h3 {
+            color: var(--primary-color);
+            margin: 2rem 0 1rem;
+        }
+        
+        .about-content ul {
+            padding-right: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-content ul li {
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+        
+        .about-content ul li::before {
+            content: '•';
+            color: var(--secondary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        /* نموذج الاتصال */
+        .contact {
+            background-color: white;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--light-color);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* الفوتر */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-left: 0.5rem;
+            color: var(--accent-color);
+            width: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* التجاوبية */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 1rem;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                left: 1rem;
+                top: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .btn {
+                padding: 0.6rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "مقاول عام",
+      "description": "مقاول عام متخصص في إنشاء الشبكات، السواتر، المظلات للمنازل والطرق. خدمات متكاملة بجودة عالية وأسعار مناسبة.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "شارع الملك فهد",
+        "addressLocality": "الرياض",
+        "addressCountry": "المملكة العربية السعودية"
+      },
+      "telephone": "+966-5X-XXX-XXXX",
+      "email": "info@muqawil-general.com",
+      "openingHours": ["Sat-Thu 08:00-18:00"],
+      "url": "https://www.muqawil-general.com"
+    }
+    </script>
+
+    <!-- الهيدر -->
+    <header>
+        <div class="container header-content">
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="logo">
+                <span>مقاول عام</span>
+                <i class="fas fa-hard-hat"></i>
+            </div>
+            <nav>
+                <ul id="menu">
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#services">خدماتنا</a></li>
+                    <li><a href="#projects">مشاريعنا</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- الصفحة الرئيسية -->
+    <main>
+        <!-- الهيرو -->
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>مقاول عام متخصص في الإنشاءات والمقاولات</h1>
+                <p>نقدم خدمات متكاملة في مجال المقاولات العامة من إنشاء شبكات، سواتر، مظلات الطرق والجسور، ومظلات للمنازل والفلل بجودة عالية وأسعار مناسبة.</p>
+                <a href="#contact" class="btn">اطلب خدمة الآن</a>
+                <a href="#services" class="btn btn-accent" style="margin-right: 10px;">استكشف خدماتنا</a>
+            </div>
+        </section>
+
+        <!-- الخدمات -->
+        <section class="services" id="services">
+            <div class="container">
+                <h2 class="section-title">خدماتنا</h2>
+                <div class="services-grid">
+                    <!-- خدمة 1 -->
+                    <div class="service-card">
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="service-content">
+                            <h3>إنشاء وتركيب شبكات</h3>
+                            <p>نقدم خدمات إنشاء وتركيب الشبكات بأنواعها المختلفة بشهادة خبرة وجودة عالية. نضمن لك شبكة متينة وتصميم عملي يلبي احتياجاتك.</p>
+                            <ul>
+                                <li>تصميم متكامل وفق احتياجاتك</li>
+                                <li>استخدام أفضل المواد وأجودها</li>
+                                <li>ضمان على التصميم والتنفيذ</li>
+                            </ul>
+                            <a href="#contact" class="btn">اطلب الخدمة</a>
+                        </div>
+                    </div>
+                    
+                    <!-- خدمة 2 -->
+                    <div class="service-card">
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1620712944903-45ea9ef56446?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="service-content">
+                            <h3>سواتر</h3>
+                            <p>تصميم وتركيب سواتر بأشكال متعددة وألوان متنوعة تناسب ذوقك وتحافظ على خصوصيتك. نقدم تشكيلة واسعة من تصاميم السواتر العصرية.</p>
+                            <ul>
+                                <li>تشكيلة واسعة من التصاميم</li>
+                                <li>تركيب سريع ودقيق</li>
+                                <li>مواد عالية الجودة مقاومة للعوامل الجوية</li>
+                            </ul>
+                            <a href="#contact" class="btn">اطلب الخدمة</a>
+                        </div>
+                    </div>
+                    
+                    <!-- خدمة 3 -->
+                    <div class="service-card">
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1516216626210-e9ff2e1e2c0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="service-content">
+                            <h3>مظلات الطرق والجسور</h3>
+                            <p>نصمم وننفذ مظلات للطرق والجسور بتقنيات حديثة تضمن المتانة والجمال، مع الالتزام بمعايير السلامة والأمان الدولية.</p>
+                            <ul>
+                                <li>تصميم يواكب أحدث المعايير العالمية</li>
+                                <li>مواد متينة مقاومة للعوامل الجوية</li>
+                                <li>التزام تام بمعايير السلامة</li>
+                            </ul>
+                            <a href="#contact" class="btn">اطلب الخدمة</a>
+                        </div>
+                    </div>
+                    
+                    <!-- خدمة 4 -->
+                    <div class="service-card">
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="service-content">
+                            <h3>مظلات للمنازل والفلل</h3>
+                            <p>نقدم تشكيلة مميزة من مظلات المنازل والفلل التي تضيف لمسة جمالية لمحيط منزلك مع توفير الظل والحماية من أشعة الشمس.</p>
+                            <ul>
+                                <li>تصاميم عصرية وأنيقة</li>
+                                <li>حماية من أشعة الشمس والعوامل الجوية</li>
+                                <li>تركيب احترافي وسريع</li>
+                            </ul>
+                            <a href="#contact" class="btn">اطلب الخدمة</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- معرض الصور -->
+        <section class="gallery">
+            <div class="container">
+                <h2 class="section-title">معرض أعمالنا</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1541979667479-339a9c826894?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="مشروع سواتر حديثة في الرياض">
+                        <div class="gallery-caption">سواتر حديثة بمواد عالية الجودة</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1613494496794-19bda348a07f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="مشروع مظلة لمنزل فاخر">
+                        <div class="gallery-caption">مظلة أنيقة لمنزل فاخر</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1541979667479-339a9c826894?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="مشروع شبكات متكامل">
+                        <div class="gallery-caption">شبكات متكاملة بتصميم عملي</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1516216626210-e9ff2e1e2c0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="مشروع مظلة جسر بطريقة حديثة">
+                        <div class="gallery-caption">مظلة جسر بتقنية حديثة</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1620712944903-45ea9ef56446?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="مشروع سور فيلا بتصميم مميز">
+                        <div class="gallery-caption">سور فيلا بتصميم مميز وفريد</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="تفاصيل دقيقة في تنفيذ المشاريع">
+                        <div class="gallery-caption">اهتمام بالتفاصيل والدقة في التنفيذ</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- المشاريع -->
+        <section class="projects" id="projects">
+            <div class="container">
+                <h2 class="section-title">مشاريعنا المختارة</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1620712944903-45ea9ef56446?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="project-content">
+                            <h3>مشروع السواتر البلدية</h3>
+                            <div class="project-location"><i class="fas fa-map-marker-alt"></i> الرياض، حي النخيل</div>
+                            <p>تنفيذ سواتر بلدية بطول 2 كم بمواصفات عالية الجودة وتصميم يتناسب مع الطابع العمراني للمنطقة.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1516216626210-e9ff2e1e2c0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="project-content">
+                            <h3>مظلات جسر الملك فهد</h3>
+                            <div class="project-location"><i class="fas fa-map-marker-alt"></i> الدمام، كورنيش الدمام</div>
+                            <p>تصميم وتنفيذ مظلات حديثة لجسر الملك فهد باستخدام تقنيات متطورة ومواد عالية الجودة.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1613494496794-19bda348a07f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="project-content">
+                            <h3>مشروع فيلا الشيخ عبدالله</h3>
+                            <div class="project-location"><i class="fas fa-map-marker-alt"></i> جدة، حي الصفا</div>
+                            <p>تنفيذ مظلات وسواتر متكاملة لفيلا فاخرة بتصميم عصري يلبي متطلبات العميل ويناسب ديكور الفيلا.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- التقييمات -->
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">آراء عملائنا</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">تعاملت مع شركة مقاول عام لتنفيذ سور للمنزل وكانت تجربة رائعة، فريق العمل محترف والجودة ممتازة والتسليم في الوقت المحدد. أنصح بالتعامل معهم.</p>
+                        <p class="testimonial-author">أحمد السليم</p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">قمت بتكليف الشركة بتنفيذ مظلة للجسر في مشروعي وكان الأداء ممتازاً من حيث التصميم والجودة والسعر. يعملون بدقة وباحترافية عالية.</p>
+                        <p class="testimonial-author">م. خالد الحربي</p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">شركة محترمة وملتزمة بالمواعيد، نفذت لي مشروع شبكات متكامل وكان سعرهم مناسب وجودة عملهم ممتازة. شكراً لكم على الاحترافية.</p>
+                        <p class="testimonial-author">أبو محمد</p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- من نحن -->
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section-title">من نحن</h2>
+                <div class="about-content">
+                    <p>شركة "مقاول عام" هي شركة سعودية متخصصة في مجال المقاولات العامة وتقديم خدمات الإنشاءات المتكاملة. تأسست الشركة برؤية طموحة لتقديم خدمات متميزة في مجال المقاولات العامة مع الالتزام بمعايير الجودة والسلامة.</p>
+                    <p>نتمتع بخبرة واسعة في تنفيذ مشاريع إنشاء الشبكات، السواتر، مظلات الطرق والجسور، والمظلات للمنازل والفلل. يعمل ضمن فريقنا مهندسون وفنيون متمرسون وحاصلون على شهادات احترافية في تخصصاتهم.</p>
+                    <p>نلتزم في شركة "مقاول عام" بتقديم أفضل الخدمات لعملائنا الكرام من خلال استخدام مواد عالية الجودة وتطبيق أحدث التقنيات في التنفيذ، مع الالتزام بمواعيد التسليم والأسعار التنافسية.</p>
+                    <h3>لماذا تختارنا؟</h3>
+                    <ul>
+                        <li>خبرة واسعة في مجال المقاولات العامة</li>
+                        <li>فريق عمل محترف ومدرب</li>
+                        <li>جودة عالية في المواد والتنفيذ</li>
+                        <li>الالتزام بمواعيد التسليم</li>
+                        <li>أسعار تنافسية ومناسبة</li>
+                        <li>ضمان على جميع أعمالنا</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- اتصل بنا -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 class="section-title">اتصل بنا</h2>
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">الرسالة</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">إرسال الرسالة</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>عن الشركة</h3>
+                    <p>شركة مقاول عام متخصصة في تقديم خدمات المقاولات العامة وإنشاء الشبكات، السواتر، المظلات للطرق والمنازل بجودة عالية وأسعار مناسبة.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>معلومات التواصل</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +966-5X-XXX-XXXX</p>
+                        <p><i class="fas fa-envelope"></i> info@muqawil-general.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> الرياض، المملكة العربية السعودية</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>تابعنا على</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 مقاول عام. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript للقائمة المتنقلة
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const menu = document.getElementById('menu');
+            
+            menuBtn.addEventListener('click', function() {
+                menu.classList.toggle('show');
+            });
+            
+            // إغلاق القائمة عند النقر على رابط
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    menu.classList.remove('show');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
